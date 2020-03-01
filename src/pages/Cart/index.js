@@ -37,7 +37,7 @@ function Cart({ cart, total, removeFromCart, updateAmount }) {
         </thead>
         <tbody>
           {cart.map(product => (
-            <tr>
+            <tr key={product.id}>
               <td>
                 <img src={product.image} alt={product.title} />
               </td>
@@ -84,8 +84,8 @@ function Cart({ cart, total, removeFromCart, updateAmount }) {
 }
 
 Cart.propTypes = {
-  cart: PropType.shape.isRequired,
-  total: PropType.number.isRequired,
+  cart: PropType.arrayOf(Object).isRequired,
+  total: PropType.string.isRequired,
   removeFromCart: PropType.func.isRequired,
   updateAmount: PropType.func.isRequired,
 };
