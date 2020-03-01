@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropType from 'prop-types';
 import { connect } from 'react-redux';
 import { MdAddShoppingCart } from 'react-icons/md';
 import { formatPrice } from '../../util/format';
@@ -8,6 +9,10 @@ import { ProductList } from './styles';
 class Home extends Component {
   state = {
     products: [],
+  };
+
+  static propTypes = {
+    dispatch: PropType.shape().isRequired,
   };
 
   async componentDidMount() {
