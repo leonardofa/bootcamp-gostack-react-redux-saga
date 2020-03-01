@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+import './config/ReactotronConfig';
+
 import Header from './componets/Header';
 import GloblaStyle from './styles/global';
 import Routes from './routes';
