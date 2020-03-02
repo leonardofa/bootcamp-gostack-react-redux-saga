@@ -1,4 +1,5 @@
 import { call, select, put, all, takeLatest } from 'redux-saga/effects';
+import { toast } from 'react-toastify';
 
 import api from '../../../services/api';
 import { formatPrice } from '../../../util/format';
@@ -17,9 +18,7 @@ function* addToCard({ id }) {
   const amount = currentAmount + 1;
 
   if (amount > stockAmount) {
-    console.tron.warn(
-      `Amount request: ${amount}. Stock amount: ${stockAmount}`
-    );
+    toast.error(`Amount request: ${amount}. Stock amount: ${stockAmount}`);
     return;
   }
 
